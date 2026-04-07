@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+  background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+.dark body {
+  background-image: radial-gradient(#1f2937 0.5px, transparent 0.5px);
+}
+
+.gradient-text {
+  background-image: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .gradient-text {
+  background-image: linear-gradient(135deg, #ffffff, #d1d5db, #9ca3af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.15);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 20px 40px -20px rgba(255, 255, 255, 0.05);
+}
+
+.theme-transition {
+  transition: background-color 0.3s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.project-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.8rem;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.skill-badge {
+  border-radius: 40px;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+.dark .section-title {
+  border-left-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .screenshot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.role-badge {
+  background: linear-gradient(135deg, #2563eb15, #7c3aed15);
+  border-radius: 20px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dark .role-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fullstack-badge {
+  background: linear-gradient(135deg, #10b98115, #3b82f615);
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.dark .fullstack-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.animate-in {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
